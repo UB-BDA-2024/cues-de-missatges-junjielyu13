@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   api:
@@ -38,16 +38,16 @@ services:
   rabbitmq:
     image: rabbitmq:3-management-alpine
     command: rabbitmq-server
-    container_name: 'rabbitmq'
+    container_name: "rabbitmq"
     ports:
-        - 5672:5672
-        - 15672:15672
+      - 5672:5672
+      - 15672:15672
     volumes:
-        - rabbitmq_data:/var/lib/rabbitmq
-        - rabbitmq_log:/var/log/rabbitmq
+      - rabbitmq_data:/var/lib/rabbitmq
+      - rabbitmq_log:/var/log/rabbitmq
     networks:
-        - app_network
-  
+      - app_network
+
   postgreSQL:
     image: postgres:14-alpine
     volumes:
@@ -137,5 +137,3 @@ volumes:
 
 networks:
   app_network:
-
- 
