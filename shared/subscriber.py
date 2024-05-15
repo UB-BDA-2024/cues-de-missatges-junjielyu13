@@ -17,6 +17,7 @@ class Subscriber:
             time.sleep(10)
             self.conn = pika.BlockingConnection(parameters)
         self.channel = self.conn.channel()
+        self.channel.queue_declare(queue=QUEUE_NAME, durable=True)
 
 
     def subscribe(self, callback):
