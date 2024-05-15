@@ -33,3 +33,4 @@ app.include_router(sensorsRouter)
 def index():
     #Return the api name and version
     return {"name": app.title, "version": app.version}
+
